@@ -1,0 +1,34 @@
+:root {
+  --primary: #009879;
+  --c-gray-1: #a3a3a3;
+  --c-gray-2: #ddd;
+  --c-blue-1: #00f;
+  --c-green-1: #23ae23;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.oi {
+  cursor: pointer;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.space-around {
+  margin: 0 2.5rem;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
