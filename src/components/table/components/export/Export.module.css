@@ -1,0 +1,8 @@
+.disabled {
+  cursor: not-allowed;
+  color: var(--c-gray-2);
+}
+
+.download {
+  cursor: pointer;
+}

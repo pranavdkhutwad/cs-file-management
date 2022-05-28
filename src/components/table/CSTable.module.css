@@ -7,7 +7,7 @@
   display: flex;
   padding: 12px 15px;
   border-bottom: 1px solid var(--c-gray-2);
-  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .styledTable {
@@ -20,7 +20,7 @@
 
 .styledTable thead tr {
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--c-white);
   text-align: left;
 }
 

@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "local-server": "json-server db.json --port 3300",
+    "api-server": "json-server db.json --port 3300",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

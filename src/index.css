@@ -4,6 +4,7 @@
   --c-gray-2: #ddd;
   --c-blue-1: #00f;
   --c-green-1: #23ae23;
+  --c-white: #fff;
 }
 body {
   margin: 0;
@@ -12,11 +13,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .oi {

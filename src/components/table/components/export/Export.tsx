@@ -1,12 +1,14 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
 import { Row } from "../../../../interfaces/file-management.interface";
 import { FM_COLUMNS } from "../../../../constants";
+import styles from "./Export.module.css";
 
 type ExportProps = {
+  canDownload: boolean;
   selectedRows: Row[];
 };
 
-const Export: FC<ExportProps> = ({ selectedRows }) => {
+const Export: FC<ExportProps> = ({ canDownload, selectedRows }) => {
   const downloadHandler = () => {
     const exportedRecords = selectedRows.reduce((acc: any, row: Row) => {
       if (row.cells[FM_COLUMNS.STATUS] === "available") {
@@ -21,9 +23,10 @@ const Export: FC<ExportProps> = ({ selectedRows }) => {
   };
   return (
     <div
-      onClick={downloadHandler}
-      style={{ cursor: "pointer" }}
-      className="space-around"
+      onClick={canDownload ? downloadHandler : () => {}}
+      className={`${
+        !canDownload ? styles.disabled : styles.download
+      } space-around`}
     >
       <span className="oi" data-glyph="data-transfer-download"></span>
       <span>Download Selected</span>

@@ -4,8 +4,9 @@ import Checkbox from "../checkbox/Checkbox";
 import SelectedCount from "./components/selected-count/SelectedCount";
 import Export from "./components/export/Export";
 import { getCheckedAllStatus } from "./util";
-import { Columns, Row } from "../../interfaces/file-management.interface";
+import { FM_COLUMNS } from "../../constants";
 
+import { Columns, Row } from "../../interfaces/file-management.interface";
 import styles from "./CSTable.module.css";
 
 // Props Type.
@@ -24,11 +25,20 @@ const CSTable: FC<CSTableProps> = ({
   selectAllRows,
   selectedRows,
 }) => {
+  const canDownload = () => {
+    for (let row of selectedRows) {
+      if (row.cells[FM_COLUMNS.STATUS] === "available") {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
   // Top most checkbox change handler.
   const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const checked = event.target.checked;
     const selectedRows = checked ? rows : [];
-
     selectAllRows(selectedRows);
   };
 
@@ -53,7 +63,7 @@ const CSTable: FC<CSTableProps> = ({
             onChange={changeHandler}
           />
           <SelectedCount selectedRowsCount={selectedCount} />
-          <Export selectedRows={selectedRows} />
+          <Export canDownload={canDownload()} selectedRows={selectedRows} />
         </div>
       ) : null}
       <table className={styles.styledTable}>
